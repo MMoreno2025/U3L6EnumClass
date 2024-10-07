@@ -3,11 +3,10 @@ package com.mycompany.u3l6enumclasses;
 import java.util.Scanner;
 
 public class U3L6EnumClasses {
-    enum weekDays {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday}
-    enum months {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec}
     public static void main(String[] args) {
         //Write a main methong that creats and enum for days of the week
         //then print them all out and print out the number of the week (not ordinals)
+        enum weekDays {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday}  //defining enum class//
         System.out.println("Day of the week: "+weekDays.Sunday.name()+"\t\tNumber of the day: "+(weekDays.Sunday.ordinal()+1));
         System.out.println("Day of the week: "+weekDays.Monday.name()+"\t\tNumber of the day: "+(weekDays.Monday.ordinal()+1));
         System.out.println("Day of the week: "+weekDays.Tuesday.name()+"\tNumber of the day: "+(weekDays.Tuesday.ordinal()+1));
@@ -18,6 +17,7 @@ public class U3L6EnumClasses {
         
         //Write a main method creating an enum for months of the year
         //then print them out plys month in the year number
+        enum months {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec}    //defining enum class//
         System.out.println("\n\nMonth: "+months.Jan.name()+"\tMonth Number of the year: "+(months.Jan.ordinal()+1));
         System.out.println("Month: "+months.Feb.name()+"\tMonth Number of the year: "+(months.Feb.ordinal()+1));
         System.out.println("Month: "+months.Mar.name()+"\tMonth Number of the year: "+(months.Mar.ordinal()+1));
@@ -35,13 +35,13 @@ public class U3L6EnumClasses {
         //must make string for username, recall all years have a length of 4, use int object to parse int valu of string
         //have method pring graduation year and year after graduation
         //Also print "In computer language, you graduate in: " and the bianry of string version of graduation year
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);      //create scanner//
         System.out.print("\n\nWhat is your CCHS username:\t");
-        String schoolUser = scan.next();
-        String gradYear = schoolUser.substring(schoolUser.length()-4, schoolUser.length());
-        Integer gradYearInt = Integer.parseInt(gradYear);
+        String schoolUser = scan.next();        //get username from user//
+        String gradYear = schoolUser.substring(schoolUser.length()-4, schoolUser.length());     //get graduation year at the end of username, last 4 places//
+        Integer gradYearInt = Integer.parseInt(gradYear);       //conver graduation year from string to integer//
         
         System.out.println("You will graduate in: "+gradYearInt+" and the year after that will be: "+(gradYearInt+1));
-        System.out.println("In computer language, you graduate in: "+Integer.toBinaryString(gradYearInt));
+        System.out.println("In computer language, you graduate in: "+Integer.toBinaryString(gradYearInt));      //convert integer to bionary//
     }
 }
